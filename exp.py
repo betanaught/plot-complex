@@ -31,8 +31,7 @@ color = cm.jet(norm(arguments))
 fig = plt.figure(figsize = (16,8))
 
 # Plot the real part
-ax_real = fig.add_subplot(1, 2, 1,
-                          projection = '3d')
+ax_real = fig.add_subplot(1, 2, 1, projection = '3d')
 ax_real.plot_surface(z.real, z.imag, w.real,
                      rstride = 1, cstride = 1, alpha = 0.5,
                      facecolors = color)
