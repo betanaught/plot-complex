@@ -1,12 +1,15 @@
 # Code demonstrating the plotting of complex functions
-
 import numpy
-import sympy
+# import sympy
+
+import matplotlib
+matplotlib.use('TKAgg')
+import matplotlib.pyplot as plt
 
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib
 from matplotlib import cm, colors
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 branching_number = 2
 
@@ -28,16 +31,19 @@ arguments = numpy.angle(w)
 norm = colors.Normalize(arguments.min(), arguments.max())
 color = cm.jet(norm(arguments))
 
-fig = plt.figure(figsize = (16,8))
+fig = plt.figure(figsize=(16, 8))
 
 # Plot the real part
-ax_real = fig.add_subplot(1, 2, 1, projection = '3d')
+ax_real = fig.add_subplot(1, 2, 1, projection='3d')
 ax_real.plot_surface(z.real, z.imag, w.real,
-                     rstride = 1, cstride = 1, alpha = 0.5,
-                     facecolors = color)
+                     rstride=1, cstride=1, alpha=0.5,
+                     facecolors=color)
 
 # Plot the imaginary part
-ax_imag = fig.add_subplot(1, 2, 2, projection = '3d')
-ax_imag.plot_surface(z.real, z,imag, w.imag,
-                     rstride = 1, cstride = 1, alpha = 0.5,
-                     facecolors = color)
+ax_imag = fig.add_subplot(1, 2, 2, projection='3d')
+ax_imag.plot_surface(z.real, z.imag, w.imag,
+                     rstride=1, cstride=1, alpha=0.5,
+                     facecolors=color)
+plt.ion()
+plt.show()
+plt.close()
