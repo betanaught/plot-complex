@@ -3,7 +3,7 @@ import numpy
 # import sympy
 
 import matplotlib
-matplotlib.use('TKAgg')
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 from mpl_toolkits.mplot3d import Axes3D
@@ -44,6 +44,6 @@ ax_imag = fig.add_subplot(1, 2, 2, projection='3d')
 ax_imag.plot_surface(z.real, z.imag, w.imag,
                      rstride=1, cstride=1, alpha=0.5,
                      facecolors=color)
-plt.ion()
+plt.ion()  # plot interactive mode: on
 plt.show()
 plt.close()
